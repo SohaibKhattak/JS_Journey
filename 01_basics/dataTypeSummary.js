@@ -1,4 +1,4 @@
-//  Primitive
+// 01 Primitive
 
 //  7 types : String, Number, Boolearn, null, undefined, Symbol, BigInt
 
@@ -18,7 +18,7 @@ console.log(id === anotherId);
 
 
 
-// Reference (Non primitive)
+// 02 - Reference (Non primitive)
 
 // Array, Objects, Functions
 
