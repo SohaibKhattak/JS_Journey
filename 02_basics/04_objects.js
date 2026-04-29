@@ -61,4 +61,3 @@ console.log(user.hasOwnProperty("name"))
 //checks key is there or not
 
 
-
