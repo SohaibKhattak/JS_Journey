@@ -135,5 +135,41 @@ Uses Call Stack (LIFO)
 Single-threaded & synchronous
 Functions create new execution contexts
 
+//Please see the attached picture of js execution flow for understanding
+
+
+understanding call stack analyze the example of nested calls:
+
+function one(){
+	console.log("one")
+	two()
+}
+
+function two(){
+	console.log("two")
+	three()
+}
+
+function three(){
+	console.log("three")
+}
+
+one()
+
+Now what call stack do is:
+
+.Global execution context
+.one() ---> one ---->two() --->two--->three()--->three
+
+now what call stack has is:
+
+three()  // this enters last, but when executed it pops out first as stack works on LIFO
+two()   //then this one
+one() // this enters the stack first
+Global execution context
+
+every function exits the stack but Global EC remains there.
+
+
 
 
