@@ -1,0 +1,139 @@
+how javascript code is executed
+
+📘 1. JavaScript Execution – Basic Idea
+.JavaScript is a single-threaded language
+.Executes one line at a time
+Uses:
+1. Execution Context
+2. Call Stack
+
+👉 These two control how JS runs your code.
+
+📘 2. What is Execution Context?
+
+Execution Context = Environment where JS code runs
+
+🔹 Types of Execution Context:
+1. Global Execution Context (GEC)
+.Created automatically when program starts
+.Stored in this
+In browser → this = window
+Only created once
+
+2. Function Execution Context (FEC)
+Created whenever a function is called
+Each function gets its own execution context
+⚡ Important:
+JavaScript code always runs inside an execution context
+
+📘 3. How Execution Context is Created (2 Phases)
+🔹 Phase 1: Memory Creation Phase (Creation Phase)
+Variables → stored as undefined
+Functions → stored as complete definitions
+
+Example:
+var a = 10;
+function test() {}
+👉 Memory Phase:
+
+a → undefined
+test → full function
+
+🔹 Phase 2: Execution Phase
+Code runs line by line
+Values assigned
+Functions executed
+
+👉 Now:
+
+a = 10
+test() runs when called
+
+
+📘 4. Call Stack (VERY IMPORTANT 🔥)
+
+Call Stack = Stack that manages execution contexts
+
+👉 Works on:
+
+LIFO (Last In First Out)
+
+🔹 How it works:
+Global Execution Context pushed first
+When function is called:
+New context pushed on stack
+When function finishes:
+Removed (popped)
+
+Example:
+
+function one() {
+    two();
+}
+
+function two() {
+    console.log("Hello");
+}
+one();
+
+🔹 Execution Flow:
+Global EC → pushed
+one() called → pushed
+two() called → pushed
+console.log() runs
+two() removed
+one() removed
+Global remains
+
+📘 5. Stack Diagram (Concept)
+| two() |
+| one() |
+| GEC   |
+
+After execution:
+| GEC | remains
+
+📘 6. Important Concepts Explained
+🔹 1. JavaScript is Synchronous
+Runs line by line
+
+No parallel execution (by default)
+🔹 2. JavaScript is Single-threaded
+One call stack
+One task at a time
+
+🔹 3. Blocking Nature
+If one task is long → others wait
+
+📘 7. Real-Life Analogy (Stack)
+Think of:
+📚 Stack of plates
+Add plate → push
+Remove plate → pop
+Last plate → removed first
+
+📘 8. Key Interview Points 🔥
+What is execution context?
+Difference between GEC & FEC
+What are creation & execution phases?
+What is call stack?
+Why JS is single-threaded?
+How functions are handled internally?
+
+📘 9. Common Mistake Students Make
+❌ Thinking variables are stored with values initially
+✔️ Actually:
+First → undefined
+Then → actual value assigned
+
+📘 10. Summary (Quick Revision)
+JS runs inside Execution Context
+Two phases:
+Memory Creation
+Execution
+Uses Call Stack (LIFO)
+Single-threaded & synchronous
+Functions create new execution contexts
+
+
+
