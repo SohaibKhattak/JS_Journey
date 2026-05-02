@@ -19,12 +19,7 @@ Also normal for, while loops can be used but the above mentioned loops gave us e
 
 //MAPS
 
-// const map = new Map()
-
-// map.set("PAK", "Pakistan")
-// map.set("FR", "France")
-// map.set("UK", "United Kingdom")
-
+CZ
 // // for (const key of map) {
 // //     console.log(key)
 // // }
