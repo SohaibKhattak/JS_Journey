@@ -19,7 +19,6 @@ Also normal for, while loops can be used but the above mentioned loops gave us e
 
 //MAPS
 
-CZ
 // // for (const key of map) {
 // //     console.log(key)
 // // }
