@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Elements Creation</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+
+<script>
+
+const divCreation = document.createElement("div")
+divCreation.className= "main"
+divCreation.id="myId"
+const heading = document.createElement("h2")
+const headingText = document.createTextNode("This is Sohaib")
+
+console.log(divCreation)
+
+heading.appendChild(headingText)
+divCreation.appendChild(heading)
+document.body.appendChild(divCreation)
+
+</script>
+
+</html>
