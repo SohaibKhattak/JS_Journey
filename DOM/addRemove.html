@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DOM Learning</title>
+    <title>DOM Add & Remove Elements</title>
     <style>
         .bg-black{
             background-color: black ;
@@ -12,15 +12,52 @@
 </head>
 <body class="bg-black">
     <div>
-        <h1 id="title" class="heading">DOM Learning practice <span style="display: none;">test text</span> </h1>
-        <p>Lorem ipsum, dolor sit amet</p>
-
-        <ul>
-            <li class ="list-item">one</li>
-            <li class ="list-item">two</li>
-            <li class ="list-item">three</li>
-            <li class ="list-item">four</li>
+        <ul class="language">
+            <li>javascript</li>
         </ul>
     </div>
 </body>
+
+<script>
+
+    function addLanguage(addLang){
+        const li = document.createElement("li")
+        li.innerHTML = `${addLang}`
+        document.querySelector(".language").appendChild(li)
+    }
+
+    addLanguage("python")
+    addLanguage("ruby")
+
+////----------------------------------------------///
+// This is just an optimized approch as it dont traverse the whole tree everytime a list is added, bcz we created a textNode directly
+
+    function addOptiLanguage(addLang){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(addLang))
+        document.querySelector('.language').appendChild(li)
+    }
+    
+    addOptiLanguage("java")
+
+
+//Edit
+
+const editLang = document.querySelector('li:nth-child(2)')
+// editLang.innerHTML = "mojo"  // avoid using innerHtml bcz of optimization issue
+
+const newLi = document.createElement('li')
+newLi.textContent = "Mojo"
+
+editLang.replaceWith(newLi)
+
+// Here we created a new li and replaced it with 2nd child directly, so we havn't traversed for it, rather added directly
+
+//Remove
+
+const lastLang = document.querySelector('li:last-child')
+lastLang.remove()
+
+</script>
+
 </html>
